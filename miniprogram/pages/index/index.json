@@ -1,6 +1,5 @@
 {
   "usingComponents": {
-    "mp-tabbar": "/components/tabbar/tabbar",
     "dialog": "/components/Dialog/dialog/dialog"
   },
   "navigationBarTitleText": "悠小呦 首页",

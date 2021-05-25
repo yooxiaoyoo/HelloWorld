@@ -2,8 +2,6 @@
   "pages": [
     "pages/index/index",
     "pages/page1-home/index",
-    "components/tabbar/tabbar",
-    "pages/icon/icon",
     "components/Dialog/dialog/dialog"
   ],
   "window": {
