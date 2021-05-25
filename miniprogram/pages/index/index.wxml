@@ -1,3 +1,16 @@
 <!--miniprogram/pages/index/index.wxml-->
 <open-data type="userAvatarUrl" class="portrait"></open-data> 
 <open-data type="userNickName" lang="zh_CN" class="name"></open-data>  
+<!-- <mp-tabbar style="position:fixed;bottom:0;width:100%;left:0;right:0;" list="{{list}}" bindchange="tabChange"></mp-tabbar> -->
+<!--WXML示例代码-->
+<view class="container">
+    <dialog id='dialog' 
+      title='我是标题' 
+      content='恭喜你，学会了小程序组件' 
+      cancelText='知道了' 
+      confirm='谢谢你'
+      bind:cancelEvent="_cancelEvent"  
+      bind:confirmEvent="_confirmEvent">
+    </dialog>
+    <button type="primary" bindtap="showDialog"> ClickMe! </button>
+</view>
