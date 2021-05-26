@@ -1,0 +1,12 @@
+<!--components/tabbar/tabbar.wxml-->
+<view class='my-tabbar-wrap'>
+  <view class="{{defaultShowIndex===0?'tabbar-active tabbar-item':'tabbar-item'}}" data-index="0"  bindtap='myTabbarEvent'>
+    <image src="cloud://yoocloud1-0g7pkeza0de417b3.796f-yoocloud1-0g7pkeza0de417b3-1305860898/icon_cgtk4tswd4k/collection-fill2.png"></image>
+    <view class="item-text">啦啦啦</view>
+  </view>
+  <view class="{{defaultShowIndex===1?'tabbar-active tabbar-item':'tabbar-item'}}" data-index="1" bindtap='myTabbarEvent'>
+    <image src="cloud://yoocloud1-0g7pkeza0de417b3.796f-yoocloud1-0g7pkeza0de417b3-1305860898/icon_cgtk4tswd4k/gift2.png"></image>
+    <view class="item-text">滴滴滴</view>
+  </view>
+</view>
+

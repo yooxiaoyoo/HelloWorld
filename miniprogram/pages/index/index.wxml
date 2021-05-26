@@ -5,12 +5,19 @@
 <!--WXML示例代码-->
 <view class="container">
     <dialog id='dialog' 
-      title='我是标题' 
-      content='恭喜你，学会了小程序组件' 
+      title='悠小呦' 
+      content='欢迎来到自制小程序，叫爸爸' 
       cancelText='知道了' 
       confirm='谢谢你'
       bind:cancelEvent="_cancelEvent"  
       bind:confirmEvent="_confirmEvent">
     </dialog>
     <button type="primary" bindtap="showDialog"> ClickMe! </button>
+</view>
+<!-- 底部 -->
+<view style="position:fixed;bottom: 0px;left:0px;width:100%;">
+    <my-tabbar
+      id="myTabbarId"
+      default-show-index="{{ defaultShowIndex }}"
+      bind:myTabbarEvent='popBaitiaoView'></my-tabbar>
 </view>

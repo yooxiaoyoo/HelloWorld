@@ -1,2 +1,12 @@
 <!--miniprogram/pages/page1-home/index.wxml-->
-<text>miniprogram/pages/page1-home/index.wxml</text>
+<text>哎，暂时啥也没有</text>
+<text>还不知道放点啥</text>
+<text>放个照片吧</text>
+<image src="cloud://yoocloud1-0g7pkeza0de417b3.796f-yoocloud1-0g7pkeza0de417b3-1305860898/美女模板.jpg"></image>
+<!-- 底部 -->
+<view style="position:fixed;bottom: 0px;left:0px;width:100%;">
+    <my-tabbar
+      id="myTabbarId"
+      default-show-index="{{ defaultShowIndex }}"
+      bind:myTabbarEvent='popBaitiaoView'></my-tabbar>
+</view>

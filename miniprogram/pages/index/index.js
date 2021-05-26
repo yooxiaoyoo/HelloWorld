@@ -7,20 +7,7 @@ Page({
    */
   data: {
     openid:"",
-    nbFrontColor: '#000000',
-    nbBackgroundColor: '#ffffff',
-    list: [{
-      "text": "对话",
-      "iconPath": "../../images/tabbar_icon_chat_default.png",
-      "selectedIconPath": "../../images/tabbar_icon_chat_active.png",
-        dot: true
-    },
-    {
-        "text": "设置",
-      "iconPath": "../../images/tabbar_icon_setting_default.png",
-      "selectedIconPath": "../../images/tabbar_icon_setting_active.png",
-        badge: 'New'
-    }]
+    defaultShowIndex: 0 , // 默认显示的索引（底部导航部分）
   },
   tabChange(e) {
     console.log('tab change', e)
@@ -77,6 +64,15 @@ Page({
   },
   // 弹窗组件部分结束
 
+  // 底部插件导航点击，切换样式
+  popBaitiaoView: function (e) {
+    // 接受子组件发送的数据  e
+    // 设置数据
+    this.setData({
+      defaultShowIndex: e.detail.activeIndex.showIndex,
+    })
+  },
+  
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

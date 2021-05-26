@@ -1,8 +1,25 @@
 {
   "usingComponents": {
-    "dialog": "/components/Dialog/dialog/dialog"
+    "dialog": "/components/Dialog/dialog",
+    "my-tabbar": "/components/tabbar/tabbar"
   },
-  "navigationBarTitleText": "悠小呦 首页",
+  "navigationBarTitleText": "悠小呦🍉 首页",
   "navigationBarBackgroundColor": "#e4572a",
-  "navigationBarTextStyle": "white"
+  "navigationBarTextStyle": "white",
+  "tabBar": { 
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/aliwangwang.png",
+        "selectedIconPath": "images/aliwangwang2.png",
+        "text": "首页（此部分为无效代码，需要放置在app.json里）"
+      },
+      {
+        "pagePath": "pages/page1-home/index",
+        "iconPath": "images/aliwangwang.png",
+        "selectedIconPath": "images/aliwangwang2.png",
+        "text": "日志"
+      }
+    ]
+  }
 }
