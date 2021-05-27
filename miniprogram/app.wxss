@@ -154,3 +154,5 @@ page {
   line-height: 36rpx;
   word-break: break-all;
 }
+
+@import "iconfont.wxss"   /* 引入iconfont */

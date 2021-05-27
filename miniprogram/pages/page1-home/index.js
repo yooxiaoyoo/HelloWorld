@@ -5,9 +5,35 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    defaultShowIndex: {
+      index:1,
+      list:[
+        {
+          url:"/pages/index/index",//链接
+          pic:"icon-WIFI",//图标
+          tit:"活动详情"//导航
+        },
+        {
+          url:"/pages/page1-home/index",//链接
+          pic:"icon-poweroff",//图标
+          tit:"活动详情"//导航
+        },
+        {
+          url:"/pages/index/index",//链接
+          pic:"icon-WIFI",//图标
+          tit:"活动详情"//导航
+        }
+      ]
+    } , // 默认显示的索引（底部导航部分）
   },
-
+  // 底部插件导航点击，切换样式
+  popBaitiaoView: function (e) {
+    // 接受子组件发送的数据  e
+    // 设置数据
+    this.setData({
+      defaultShowIndex: e.detail.activeIndex.showIndex,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

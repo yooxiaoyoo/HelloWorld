@@ -1,6 +1,6 @@
 /* components/tabbar/tabbar.wxss */
 .my-tabbar-wrap{
-  height: 70px;
+  height: 140rpx;
   width: 100%;
   border-top: 1rpx solid #ddd;
   display: flex;
@@ -9,20 +9,29 @@
 }
 .my-tabbar-wrap .tabbar-item{
   width: 50%;
-  height: 50px;
+  height: 80rpx;
   color: fff;
   text-align: center;
 }
 .my-tabbar-wrap .tabbar-item image{
   /* display: block; */
-  width: 24px;
-  height: 24px;
-  margin-top: 7px;
-  margin-bottom: -5px;
+  width: 48rpx;
+  height: 48rpx;
+  margin-top: 14rpx;
+  margin-bottom: -10rpx;
 }
 .tabbar-active .item-text{
   color:#e4572a;
 }
 .item-text{
-  font-size: 12px;
+  font-size: 24rpx;
+}
+.iconfont{
+  font-size: 50rpx;
+  color: #999;
+  margin-bottom: 10rpx;
+  display: block;
+}
+.tabbar-active .iconfont{
+  color: #e4572a;
 }

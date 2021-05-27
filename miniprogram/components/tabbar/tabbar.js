@@ -17,10 +17,16 @@ Component({
     // showIndexActive: 0,
   },
 
+  options:{
+    // 用于iconfont在小程序中使用
+    styleIsolation:'apply-shared'
+  },
+
   /**
    * 组件的方法列表
    */
   methods: {
+    
     // 注册事件
     myTabbarEvent: function (e) {
       console.log("qq",e)
@@ -30,7 +36,6 @@ Component({
       // 注册点击事件传给父组件
       var fatherData = { showIndex: index}
       this.triggerEvent('myTabbarEvent', { activeIndex: fatherData })
-
       if (this.data.defaultShowIndex == 0) {
         wx.redirectTo({
           url: '/pages/index/index'
@@ -40,6 +45,7 @@ Component({
           url: '/pages/page1-home/index'
         })
       }
+      console.log(this.data.defaultShowIndex)
     }
   }
 })
