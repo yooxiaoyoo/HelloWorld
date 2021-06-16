@@ -4,7 +4,7 @@
   height: 200rpx;
   border-radius: 50%;
   margin: 40rpx auto;
-  margin-top: 300rpx;
+  margin-top: 200rpx;
   overflow: hidden;
 }
 .name{

@@ -1,12 +1,13 @@
 <!--components/tabbar/tabbar.wxml-->
 <view class='my-tabbar-wrap'>
   <view class="{{defaultShowIndex===0?'tabbar-active tabbar-item':'tabbar-item'}}" data-index="0"  bindtap='myTabbarEvent'>
-    <i class="iconfont icon-WIFI"></i>
-    <view class="item-text">啦啦啦</view>
+    <i class="iconfont {{list[0].icon}}"></i>
+    <view class="item-text">{{list[0].tit}}</view>
   </view>
   <view class="{{defaultShowIndex===1?'tabbar-active tabbar-item':'tabbar-item'}}" data-index="1" bindtap='myTabbarEvent'>
-    <i class="iconfont icon-poweroff"></i>
-    <view class="item-text">滴滴滴</view>
+    <i class="iconfont {{list[1].icon}}"></i>
+    <view class="item-text">{{list[1].tit}}</view>
   </view>
-</view>
+</view> 
+
 

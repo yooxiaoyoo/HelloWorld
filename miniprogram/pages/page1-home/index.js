@@ -1,36 +1,19 @@
 // miniprogram/pages/page1-home/index.js
+const db = wx.cloud.database()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    defaultShowIndex: {
-      index:1,
-      list:[
-        {
-          url:"/pages/index/index",//链接
-          pic:"icon-WIFI",//图标
-          tit:"活动详情"//导航
-        },
-        {
-          url:"/pages/page1-home/index",//链接
-          pic:"icon-poweroff",//图标
-          tit:"活动详情"//导航
-        },
-        {
-          url:"/pages/index/index",//链接
-          pic:"icon-WIFI",//图标
-          tit:"活动详情"//导航
-        }
-      ]
-    } , // 默认显示的索引（底部导航部分）
+    defaultShowIndex:1 ,// 默认显示的索引（底部导航部分）
+    list:[]
   },
   // 底部插件导航点击，切换样式
   popBaitiaoView: function (e) {
     // 接受子组件发送的数据  e
     // 设置数据
-    this.setData({
+    _this.setData({
       defaultShowIndex: e.detail.activeIndex.showIndex,
     })
   },
@@ -38,7 +21,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let _this=this
+    // 获取数据库list数据
+    db.collection('list').get({
+      success: function(res) {
+        console.log(res)
+        _this.setData({
+          list:res.data
+        })
+      }
+    })
   },
 
   /**

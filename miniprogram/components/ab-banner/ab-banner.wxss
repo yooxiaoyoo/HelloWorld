@@ -1,0 +1,7 @@
+.swiper-item-images{
+  width: 100%;
+  height: 300rpx;
+}
+.web-view{
+  display: none;
+}

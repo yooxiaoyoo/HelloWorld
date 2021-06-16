@@ -1,0 +1,25 @@
+<!-- 轮播，在banner中调取 -->
+<swiper indicator-dots="{{banner.indicatorDots}}" 
+        autoplay="{{banner.autoplay}}" 
+        circular="{{banner.circular}}" 
+        vertical="{{banner.vertical}}" 
+        interval="{{banner.interval}}" 
+        duration="{{banner.duration}}" 
+        previous-margin="{{banner.previousMargin}}px" 
+        next-margin="{{banner.nextMargin}}px">
+    <block wx:for='{{banner.images}}' wx:key='index'>
+      <swiper-item>
+        <!-- 判断appId，如果是19课堂appid，利用btn1跳转19课堂小程序 -->
+        <view wx:if="{{banner.images[index].appId == 'wxca86930ec3e80717'}}" id="{{banner.images[index].url}}" bindtap="btn1">
+          <image src='{{banner.images[index].img}}' mode='aspectFill' class='swiper-item-images'/>
+        </view>
+        <!-- 如果不是，小程序内部跳转（后期如有新程序需要跳转，再改判断方法） -->
+        <view wx:else>
+          <navigator url="{{banner.images[index].url}}" open-type="redirect" hover-class="other-navigator-hover">
+            <image src='{{banner.images[index].img}}' mode='aspectFill' class='swiper-item-images'/>  
+          </navigator>
+        </view>
+      </swiper-item>
+    </block>
+</swiper>
+

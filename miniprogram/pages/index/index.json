@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "dialog": "/components/Dialog/dialog",
-    "my-tabbar": "/components/tabbar/tabbar"
+    "my-tabbar": "/components/tabbar/tabbar",
+    "ab-banner": "/components/ab-banner/ab-banner"
   },
   "navigationBarTitleText": "悠小呦🍉 首页",
   "navigationBarBackgroundColor": "#e4572a",

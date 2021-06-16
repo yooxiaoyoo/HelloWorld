@@ -7,7 +7,17 @@ Page({
    */
   data: {
     openid:"",
+    // list:{
+    //   defaultShowIndex: 0 , // 默认显示的索引（底部导航部分）
+    //   title:["首页","此页"],  //下标
+    //   icon:["icon-WIFI","icon-poweroff"],  //图标
+    //   href:[  //跳转链接
+    //     '/pages/index/index',
+    //     '/pages/page1-home/index',
+    //   ], 
+    // }
     defaultShowIndex: 0 , // 默认显示的索引（底部导航部分）
+    list:[]
   },
   tabChange(e) {
     console.log('tab change', e)
@@ -17,6 +27,8 @@ Page({
    */
   onLoad: function (options) {
     let _this=this
+
+    // 云函数openid获取，判断是否登陆过，登陆过则提示欢迎回来；未登录则录入openid
     wx.cloud.callFunction({
       name: 'openid',
     }).then(res => {
@@ -38,17 +50,37 @@ Page({
         }
       })
     })
+
+    // 获取云数据库内的轮播所需链接，图片，appid等数据
+    db.collection("banner").doc("28ee4e3e60c99a6f22c9360a77cadd62").get({
+      success(res){
+        _this.setData({
+          banner:res.data.banner
+        })
+      }
+    })
+
     // 页面停留3s后跳转(定时器功能)
     // setTimeout(function () {
     //   wx.reLaunch({
     //     url: '/pages/page1-home/index',
     //   })
     // }, 3000);
-    //获得dialog组件
+
+    // 获取数据库list数据
+    db.collection('list').get({
+      success: function(res) {
+        _this.setData({
+          list:res.data
+        })
+      }
+    })
+
+    //获得dialog组件（点击弹窗）
     this.dialog = this.selectComponent("#dialog");
   },
 
-  // 弹窗组件部分
+  // 弹窗组件部分-------------------
   showDialog(){
     this.dialog.showDialog();
   },
@@ -62,9 +94,9 @@ Page({
     console.log('你点击了确定');
     this.dialog.hideDialog();
   },
-  // 弹窗组件部分结束
+  // 弹窗组件部分结束-----------------
 
-  // 底部插件导航点击，切换样式
+  // 底部插件导航点击，切换样式----------------
   popBaitiaoView: function (e) {
     // 接受子组件发送的数据  e
     // 设置数据
@@ -72,6 +104,7 @@ Page({
       defaultShowIndex: e.detail.activeIndex.showIndex,
     })
   },
+  // 底部插件导航点击结束----------------
   
   /**
    * 生命周期函数--监听页面初次渲染完成

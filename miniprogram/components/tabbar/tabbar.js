@@ -4,9 +4,13 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    defaultShowIndex: { // 属性名-- 父组件传过来的数据
+    defaultShowIndex:{
       type: Number, // 类型（必填），接受的类型包括：String, Number, Boolean, Object, Array, null（表示任意类型）
-      value: 0 // 属性初始值（可选），如果未指定则会根据类型选择一个
+      value: 0
+    },
+    list: {
+      type: Object, // 类型（必填），接受的类型包括：String, Number, Boolean, Object, Array, null（表示任意类型）
+      value: []
     }
   },
 
@@ -37,12 +41,12 @@ Component({
       var fatherData = { showIndex: index}
       this.triggerEvent('myTabbarEvent', { activeIndex: fatherData })
       if (this.data.defaultShowIndex == 0) {
-        wx.redirectTo({
-          url: '/pages/index/index'
+        wx.reLaunch({  //redirectTo只能叠加10次，reLaunch关闭之前页面，重新启动
+          url: this.properties.list[0].url
         })
       } else if (this.data.defaultShowIndex == 1) {
-        wx.redirectTo({
-          url: '/pages/page1-home/index'
+        wx.reLaunch({
+          url: this.properties.list[1].url
         })
       }
       console.log(this.data.defaultShowIndex)
