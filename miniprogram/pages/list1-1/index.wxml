@@ -1,0 +1,28 @@
+<!--miniprogram/pages/index/index.wxml-->
+<!-- 轮播，传值给components内的ab—banner -->
+<view>
+		<ab-banner id="ab-banner" banner="{{banner}}"></ab-banner>
+</view>
+<!-- 微信头像及名称获取 -->
+<!-- <open-data type="userAvatarUrl" class="portrait"></open-data> 
+<open-data type="userNickName" lang="zh_CN" class="name"></open-data>   -->
+<!--WXML示例代码-->
+<view class="container">
+    <dialog id='dialog' 
+      title='悠小呦' 
+      content='欢迎来到自制小程序' 
+      cancelText='知道了' 
+      confirm='谢谢你'
+      bind:cancelEvent="_cancelEvent"  
+      bind:confirmEvent="_confirmEvent">
+    </dialog>
+    <button type="primary" bindtap="showDialog"> ClickMe! </button>
+</view>
+<!-- 底部 -->
+<view style="position:fixed;bottom: 0px;left:0px;width:100%;">
+    <my-tabbar
+      id="myTabbarId"
+      default-show-index="{{ defaultShowIndex }}"
+      list="{{list}}"
+      bind:myTabbarEvent='popBaitiaoView'></my-tabbar>
+</view>

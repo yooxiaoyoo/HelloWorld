@@ -1,0 +1,16 @@
+/* miniprogram/pages/index/index.wxss */
+.portrait{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: 200rpx;
+  margin: 40rpx auto;
+  overflow: hidden;
+}
+.name{
+  font-size:40rpx;
+  text-align: center;
+  line-height: 80rpx;
+}
+
