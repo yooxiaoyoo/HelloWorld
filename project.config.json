@@ -10,7 +10,7 @@
     "minified": true,
     "newFeature": true,
     "coverView": true,
-    "nodeModules": false,
+    "nodeModules": true,
     "autoAudits": false,
     "showShadowRootInWxmlPanel": true,
     "scopeDataCheck": false,
@@ -29,16 +29,16 @@
     },
     "enableEngineNative": false,
     "useIsolateContext": true,
-    "useCompilerModule": true,
-    "userConfirmedUseCompilerModuleSwitch": false,
     "userConfirmedBundleSwitch": false,
     "packNpmManually": false,
     "packNpmRelationList": [],
-    "minifyWXSS": true
+    "minifyWXSS": true,
+    "showES6CompileOption": false
   },
   "appid": "wxe9ee70f79708b4ba",
   "projectname": "%E6%82%A0%E5%B0%8F%E5%91%A6",
   "libVersion": "2.14.1",
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
   "condition": {
     "search": {
       "list": []

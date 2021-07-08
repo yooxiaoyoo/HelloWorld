@@ -10,5 +10,11 @@
 <button bindtap="getOpenid">获取openid</button>
 <button bindtap="batchdelete">批量删除数据</button>
 
-
-
+<view>悠小呦-云存储</view>
+<button bindtap="upload">上传图片</button>
+<button bindtap="getFile">文件展示</button>
+<block wx:for="{{images}}" wx:key="index">
+  <!-- mode="widthFix" 自适应高度 -->
+  <image src="{{item.fileID}}" mode="widthFix" style="width:90vw;margin:0 auto;"></image>
+  <button size="mini" data-fileid="{{item.fileID}}" bindtap="downloadFile">文件下载</button>
+</block>
